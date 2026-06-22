@@ -18,3 +18,21 @@ cd fucku
 g++ fucku.cpp -o fucku
 sudo cp fucku /usr/bin
 ```
+# 使用方法
+1.正常使用</br>
+```bash
+$ ./fucku
+Please type a word:test
+test
+你被骗了
+fuck U
+
+$
+```
+2.恢复</br>
+```bash
+$ ./fucku --uninstall
+Restored original fastfetch config.
+
+$
+```
