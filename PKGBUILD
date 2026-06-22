@@ -8,6 +8,7 @@ license=('GPL3')
 depends=('gcc-libs' 'glibc')
 source=("fucku.cpp")
 md5sums=('SKIP')
+options=('!debug')
 
 build() {
     cd "$srcdir"
