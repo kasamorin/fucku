@@ -1,5 +1,5 @@
 pkgname=fucku
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="A prank program that replaces fastfetch config with a custom one, with uninstall option"
 arch=('x86_64' 'aarch64')
