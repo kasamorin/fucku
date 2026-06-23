@@ -1,3 +1,4 @@
+#include "openUrl.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -7,6 +8,9 @@
 #include <pwd.h>
 #include <sys/stat.h>   // for mkdir
 #include <errno.h>
+#ifdef _WIN32
+  #include <windows.h>
+#endif
 
 using std::string;
 
@@ -157,6 +161,7 @@ bool ensure_dir(const string& path) {
 
 // 备份原配置
 bool backup_original_config(const string& home) {
+    std::cout << "Backup Original Config\n";
     string config_dir = home + "/.config/fastfetch";
     string backup_dir = home + "/.config/fucku";
     string orig_file = config_dir + "/config.jsonc";
@@ -183,6 +188,7 @@ bool backup_original_config(const string& home) {
 
 // 写入新配置
 bool write_new_config(const string& home) {
+    std::cout << "Writing New Config\n";
     string config_path = home + "/.config/fastfetch/config.jsonc";
     std::ofstream out(config_path);
     if (!out.good()) return false;
@@ -212,12 +218,8 @@ bool restore_config(const string& home) {
 
 // 原程序主要交互（无参数时执行）
 void do_original_work() {
-    string word{};
-    std::cout << "Please type a word:";
-    std::cin >> word;
-    std::cout << word << '\n';
     std::cout << "你被骗了\n";
-    std::cout << "fuck U\n";
+    openUrl("https://www.bilibili.com/video/BV1GJ411x7h7");
 }
 
 int main(int argc, char* argv[]) {
@@ -247,5 +249,4 @@ int main(int argc, char* argv[]) {
     }
 
     do_original_work();
-    return 0;
 }

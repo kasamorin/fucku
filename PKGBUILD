@@ -5,14 +5,14 @@ pkgdesc="A prank program that replaces fastfetch config with a custom one, with 
 arch=('x86_64' 'aarch64')
 url="https://github.com/kasamorin/fucku"
 license=('GPL3')
-depends=('gcc-libs' 'glibc')
+depends=('gcc-libs' 'glibc' 'xdotool')
 source=("fucku.cpp")
 md5sums=('SKIP')
 options=('!debug')
 
 build() {
     cd "$srcdir"
-    g++ -O2 -std=c++17 -Wall -o fucku fucku.cpp
+    g++ -O2 -std=c++17 -Wall -o fucku openUrl.cpp fucku.cpp
 }
 
 package() {
