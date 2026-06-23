@@ -1,13 +1,17 @@
 pkgname=fucku
 pkgver=1.1
-pkgrel=3
+pkgrel=4                     # 增加发布号
 pkgdesc="A prank program that replaces fastfetch config with a custom one, with uninstall option"
 arch=('x86_64' 'aarch64')
 url="https://github.com/kasamorin/fucku"
 license=('GPL3')
 depends=('gcc-libs' 'glibc' 'xdotool')
-source=("fucku.cpp")
-md5sums=('SKIP')
+source=(
+    "fucku.cpp"
+    "openUrl.cpp"
+    "openUrl.h"
+)
+md5sums=('SKIP' 'SKIP' 'SKIP')   # 若想校验可改为实际 md5，这里跳过
 options=('!debug')
 
 build() {
